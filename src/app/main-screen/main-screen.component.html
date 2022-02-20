@@ -1,0 +1,60 @@
+<div class="container">
+  <button class="add" routerLink="/add">+</button>
+  <h1>To Do List</h1>
+  <div class="search-bar">
+    <input class="search" placeholder="Search ..." [(ngModel)]="search" />
+  </div>
+  <div
+    *ngFor="let item of listTask | appSearch: search || ''; let i = index"
+    class="section-task"
+  >
+    <div class="task">
+      <div class="section-left-content">
+        <input style="margin-left: 20px" type="checkbox" />
+        <span style="margin-left: 10px">{{ item.title }}</span>
+      </div>
+      <div class="section-right-content">
+        <button class="btn-detail" (click)="showUpdate(item, i)">Detail</button>
+        <button class="btn-remove" (click)="deleteTask(item.id)">Remove</button>
+      </div>
+    </div>
+
+    <div *ngIf="show === i" class="section-update">
+      <form [formGroup]="editTaskForm">
+        <div class="upt-title">
+          <input formControlName="title" type="text" name="" id="" />
+        </div>
+        <div class="upt-description">
+          <div>Description</div>
+          <textarea formControlName="description" id="" rows="10"></textarea>
+        </div>
+        <div class="row">
+          <div class="col-6" style="padding-left: 30px">
+            <div class="title">Due Date</div>
+            <input
+              type="date"
+              style="width: 100%"
+              [min]="minDate"
+              formControlName="fromTo"
+            />
+          </div>
+          <div class="col-6" style="padding-right: 30px">
+            <div class="title">Priority</div>
+            <select
+              style="width: 100%"
+              name="priority"
+              formControlName="priority"
+            >
+              <option value="Must">Must</option>
+              <option value="Should">Should</option>
+              <option value="Could">Could</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-update">
+          <button (click)="updateItem()">UPDATE</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

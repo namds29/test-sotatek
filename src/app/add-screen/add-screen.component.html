@@ -1,0 +1,33 @@
+<div class="container">
+  <button class="add" routerLink="/"><</button>
+  <h1>New Task</h1>
+  <form [formGroup]="formTask">
+    <input
+      class="title-task"
+      type="text"
+      placeholder="Add new task ..."
+      formControlName="title"
+      required
+    />
+    <span class="error" *ngIf="invalid">Title is required!</span>
+    <h3>Description</h3>
+    <div class="section-task">
+      <textarea name="" rows="10" formControlName="description"></textarea>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="title">Due Date</div>
+        <input type="date" [min]="minDate" formControlName="fromTo" />
+      </div>
+      <div class="col-6">
+        <div class="title">Priority</div>
+        <select name="priority" formControlName="priority">
+          <option value="Must">Must</option>
+          <option value="Should">Should</option>
+          <option value="Could">Could</option>
+        </select>
+      </div>
+    </div>
+  </form>
+  <button class="btn-add" (click)="submit()">ADD</button>
+</div>

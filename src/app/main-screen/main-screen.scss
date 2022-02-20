@@ -1,0 +1,88 @@
+.container {
+  margin: auto;
+  width: 600px;
+  border: 3px solid #73ad21;
+  padding: 10px;
+}
+.add {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(43, 131, 146);
+  border-radius: 10px;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+h1 {
+  text-align: center;
+}
+.search {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  width: 59.7%;
+}
+.section-task {
+  width: 100%;
+  margin-top: 10px;
+  .task {
+    display: flex;
+    position: relative;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    border: 1px solid black;
+    .section-right-content {
+      position: absolute;
+      right: 15px;
+      .btn-detail {
+        margin-right: 10px;
+        width: 100px;
+        height: 30px;
+        background-color: rgb(43, 131, 146);
+        border-radius: 5px;
+        color: white;
+        border: none;
+      }
+      .btn-remove {
+        width: 100px;
+        height: 30px;
+        background-color: red;
+        border-radius: 5px;
+        color: white;
+        border: none;
+      }
+    }
+  }
+}
+.section-update {
+  width: 100%;
+  border: 1px solid black;
+
+  .upt-title {
+    padding: 20px 20px 0 20px;
+    input {
+      width: 100%;
+    }
+  }
+  .upt-description {
+    padding: 20px;
+    textarea {
+      width: 100%;
+    }
+  }
+}
+.btn-update {
+  width: 100%;
+  padding: 20px;
+
+  button {
+    border: none;
+    width: 100%;
+    height: 40px;
+    background-color: #73ad21;
+    border-radius: 10px;
+  }
+}
